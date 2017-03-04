@@ -30,23 +30,21 @@
 
 | center align| center align |
 |:-----------:|:------------:|
-|body             |  t.text            |
-|image                  | t.string                  |
-|group_id              | t.intenger     |
+|body|t.text :body, foreign_key: true|
+|image|t.string :image, foreign_key: true|
+|group_id| t.intenger :group_id, foreign_key: true|
 |user_id   |t.string :user_id, foreign_key: true|
 
  - groups table
 
 | center align| center align |
 |:-----------:|:------------:|
-|message_id|t.intenger|
 |group_name|t.string|
-|group_id|t.intenger|
 
 
  - users_groups table
 
 | center align| center align |
 |:-----------:|:------------:|
-|user_id|t.intenger|
-|group_id|t.intenger|
+|user_id|t.intenger :user_id, foreign_key: true|
+|group_id|t.intenger :group_id, foreign_key: true|
