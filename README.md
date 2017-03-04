@@ -18,17 +18,27 @@
   - groups table
 
 ### RequiredColumun
-#### users table
-    - t.string  :name
-    - add_index :users, :mail_address, unique: true
-    - t.string  :password
 
-#### messages table
-    - t.text       :body
-    - t.string     :image
-    - t.integer    :group_id
-    - t.string :user_id, foreign_key: true
+ - users table
 
-#### groups table
-    - t.intenger  :message_id
-    - t.string    :group_name
+| center align| center align |
+|:-----------:|:------------:|
+| name        |    t.string    |
+| mail_address|add index :users, :mail_address, unique: true    |
+
+- messages table
+
+| center align| center align |
+|:-----------:|:------------:|
+|body             |  t.text            |
+|image                  | t.string                  |
+|group_id              | t.intenger     |
+|user_id   |t.string :user_id, foreign_key: true|
+
+ - groups table
+
+| center align| center align |
+|:-----------:|:------------:|
+|message_id|t.intenger|
+|group_name|t.string|
+|group_id|t.intenger|
