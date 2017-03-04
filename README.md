@@ -24,7 +24,7 @@
 | center align| center align |
 |:-----------:|:------------:|
 | name        |    t.string    |
-| mail_address|add index :users, :mail_address, unique: true    |
+| email|add index :users, :email, unique: true    |
 
 - messages table
 
