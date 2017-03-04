@@ -42,3 +42,11 @@
 |message_id|t.intenger|
 |group_name|t.string|
 |group_id|t.intenger|
+
+
+ - users_groups table
+
+| center align| center align |
+|:-----------:|:------------:|
+|user_id|t.intenger|
+|group_id|t.intenger|
