@@ -1,0 +1,186 @@
+body, html {
+  height: 100%;
+  background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6, p, body {
+  color: #4a4a4a;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.contents {
+  height: 100%;
+  width: 100vw;
+}
+
+.left-contents {
+  width: 300px;
+  height: 100vh;
+  float: left;
+}
+
+.left__top-content {
+  background-color: #253141;
+  height: 96px;
+  width: 300px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.left__top-content p{
+  font-size: 16px;
+  line-height: 100px;
+  position: absolute;
+  color: #FFFFFF
+}
+
+.left__bottom-content {
+  background-color: #2f3e51;
+  width: 300px;
+  height: 100vh;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.right-contents {
+  height: 100vh;
+  width: calc(100vw - 300px);
+  float: right;
+}
+
+.right__top-content {
+  height: 96px;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.right__center-content {
+  width: 100%;
+  height: calc(100vh - 90px);
+  background-color: #EEEEEE;
+  padding: 0 40px;
+}
+.right__bottom-content {
+  height: 90px;
+  width: 100%;
+  background-color: #999999;
+  clear: both;
+  padding: 0 40px;
+  position: relative;
+}
+
+.groups{
+  padding:20px 0 40px 0;
+  color: #FFFFFF;
+  &__name {
+    font-size: 15px;
+  }
+
+  &__text {
+    padding: 5px 0 0 0;
+    font-size: 11px;
+  }
+}
+
+.fa.fa-cog {
+  position: relative;
+  float: right;
+  color: white;
+  line-height: 100px;
+}
+
+.fa.fa-pencil-square-o {
+  position: relative;
+  float: right;
+  color: white;
+  line-height: 100px;
+  padding: 0 10px 0 0;
+}
+textarea {
+  margin: 20px 0;
+  height: 50px;
+  width: 1000px;
+  line-height: 3;
+  font-size: 16px;
+  color: #434A54;
+  padding: 0 0 0 10px;
+}
+
+.fa.fa-picture-o {
+  position: absolute;
+  right: 170px;
+  bottom: 35px;
+  padding-right: 10px;
+}
+
+
+
+
+
+.button1 {
+  margin: 28px auto;
+  height: 40px;
+  float: right;
+  position: relative;
+  width: 100px;
+  text-align: center;
+  line-height: 45px;
+  border: 2px solid;
+  color: #38AEF0;
+}
+
+.button2 {
+  background-color: #38AEF0;
+  margin: 20px 0 20px 15px;
+  height: 50px;
+  float: right;
+  position: relative;
+  width: 100px;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  color: white;
+}
+
+.group_name {
+  font-size: 20px;
+  color: #333333;
+  padding: 35px 0 0 0;
+  float: left;
+}
+
+.members {
+  padding: 15px 0 0 0;
+  font-size: 12px;
+  color: #999999;
+  float: left;
+  line-height: 120px;
+  position: absolute;
+}
+
+.messages {
+  padding:46px 0 40px 0;
+
+  &__member {
+    font-size: 16px;
+    color: #434A54;
+    float: left;
+  }
+
+  &__date {
+    font-size: 12px;
+    color: #999999;
+    float: left;
+    padding: 0 0 0 10px;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: #434A54;
+    clear: both;
+    padding: 10px 0 0 0;
+  }
+
+}
