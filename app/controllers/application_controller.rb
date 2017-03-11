@@ -7,14 +7,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-
   before_action :after_sign_out_pass_for, if: :devise_controller?
 
 
 
 
   def after_sign_out_pass_for
-    '/users/sign_in'
+    'new_user_sesson'
   end
 
   def configure_permitted_parameters
