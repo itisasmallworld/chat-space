@@ -35,8 +35,10 @@ gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'erb2haml'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-rails'
   gem 'byebug'
 end
 
@@ -47,6 +49,5 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem'erb2haml'
 end
 
