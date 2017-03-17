@@ -66,20 +66,22 @@ h1, h2, h3, h4, h5, h6, p, body {
       box-sizing: border-box;
 
       .groups{
-        padding:20px 0 40px 0;
         color: $white-color;
-        &__name {
-          font-size: 15px;
-        }
 
-        &__text {
-          padding: 5px 0 0 0;
-          font-size: 11px;
+        .group {
+          padding:20px 0 40px 0;
+          &__name {
+            font-size: 15px;
+          }
+
+          &__text {
+            padding: 5px 0 0 0;
+            font-size: 11px;
+          }
         }
       }
     }
   }
-
   .right-contents {
     height: 100vh;
     width: calc(100vw - 300px);

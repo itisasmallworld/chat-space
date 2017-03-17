@@ -10,13 +10,16 @@
               = current_user.name
             =link_to edit_user_registration_path, class: "btn btn-metis1 btn-sm" do
               %i.fa.fa-cog.fa-lg
-            %i.fa.fa-pencil-square-o.fa-lg
+            =link_to new_group_path, class: "btn btn-metis2 btn-sm" do
+              %i.fa.fa-pencil-square-o.fa-lg
           .left__bottom-content
-            .groups
-              %span
-                .groups__name Sample
-              %sapn
-                .groups__text GoodByeWorld!!
+            %ul.groups
+              - @groups.each do |group|
+                %li.group
+                  .group__name
+                    = group.group_name
+                  .group__text GoodByeWorld!!
+
         .right-contents
           .right__top-content
             %span
@@ -36,4 +39,3 @@
             .textarea{placeholder: "type a message"}
               %i.fa.fa-picture-o.fa-lg
             .button2{herf: ""} Send
-
