@@ -1,15 +1,23 @@
 class GroupsController < ApplicationController
 
-  def new
-    @group = Group.new
-  end
-
   def index
   end
 
+  def new
+    @group = Group.new
+    current_user.groups.build
+  end
+
   def create
-    Group.create(group_name: group_params[:group_name])
-    redirect_to root_path
+    @group = Group.new(group_params)
+    if @group.save
+      flash[:notice] = "新規のグループが作成されました"
+      redirect_to root_path
+    else
+      flash[:alert] = "新規のグループが作成されませんでした"
+      render :new
+    end
+    
   end
 
   private
