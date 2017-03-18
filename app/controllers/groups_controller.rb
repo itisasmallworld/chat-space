@@ -11,17 +11,15 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      flash[:notice] = "新規のグループが作成されました"
-      redirect_to root_path
+      redirect_to root_path, flash: {notice: "新規のグループが作成されました。"}
     else
       flash[:alert] = "新規のグループが作成されませんでした"
-      render :new
+      render "new"
     end
-    
   end
 
   private
   def group_params
-    params.require(:group).permit(:group_name)
+    params.require(:group).permit(:group_name, :name)
   end
 end
