@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    current_user.groups.build
+    @uesr = User.new
   end
 
   def create
