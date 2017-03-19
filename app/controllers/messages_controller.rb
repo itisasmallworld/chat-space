@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController
+  class MessagesController < ApplicationController
 
   def index
     @groups = Group.new

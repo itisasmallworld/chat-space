@@ -9,10 +9,7 @@
         =link_to new_group_path, class: "btn btn-metis2 btn-sm" do
           %i.fa.fa-pencil-square-o.fa-lg
       .left__bottom-content
-        %ul.groups
-          - @groups.each do |group|
-            %li.group
-              = render partial: "left.index", locals: { group: group }
+        = render partial: "left", collection: @groups, as: "group"
 
     .right-contents
       .right__top-content
