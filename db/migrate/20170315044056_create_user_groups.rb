@@ -3,7 +3,6 @@ class CreateUserGroups < ActiveRecord::Migration[5.0]
     create_table :user_groups do |t|
       t.integer :group_id, foreign_key: true
       t.integer :user_id, foreign_key: true
-      t.timestamps
     end
   end
 end
