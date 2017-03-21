@@ -1,16 +1,10 @@
-%body
-  .contents
-    .left-contents
-      .left__top-content
-        %h1
-          = current_user.name
-        =link_to edit_user_registration_path, class: "btn btn-metis1 btn-sm" do
-          %i.fa.fa-cog.fa-lg
-        =link_to new_group_path, class: "btn btn-metis2 btn-sm" do
-          %i.fa.fa-pencil-square-o.fa-lg
-      .left__bottom-content
-        = render partial: "leftcontent", collection: @groups, as: "group"
-    .right-contents
-      .right__top-content
-      .right__center-content
-      .right__bottom-content
+.left-contents
+  .left__top-content
+    %h1
+      = current_user.name
+    =link_to edit_user_registration_path, class: "btn btn-metis1 btn-sm" do
+      %i.fa.fa-cog.fa-lg
+    =link_to new_group_path, class: "btn btn-metis2 btn-sm" do
+      %i.fa.fa-pencil-square-o.fa-lg
+  .left__bottom-content
+    = render partial: "groups/group", collection: @groups, as: "group"
