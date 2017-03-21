@@ -1,0 +1,23 @@
+= render template: "groups/index"
+.right-contents
+  .right__top-content
+    %span
+      .group_name
+        = @group.group_name
+    %span
+      .members
+        - @group.users.each do |user|
+          = user.name
+    =link_to "Edit", edit_group_path(@group), class: "button1"
+  .right__center-content
+    .messages
+      %span
+        .messages__member itisasmallworld
+      %span
+        .messages__date 2017/03/02 06:27:07
+      %span
+        .messages__text なるほど
+  .right__bottom-content
+    .textarea{placeholder: "type a message"}
+      %i.fa.fa-picture-o.fa-lg
+    .button2 Send

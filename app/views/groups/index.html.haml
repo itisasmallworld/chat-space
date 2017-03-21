@@ -1,32 +1,10 @@
-%body
-  .contents
-    .left-contents
-      .left__top-content
-        %h1
-          = current_user.name
-        =link_to edit_user_registration_path, class: "btn btn-metis1 btn-sm" do
-          %i.fa.fa-cog.fa-lg
-        =link_to new_group_path, class: "btn btn-metis2 btn-sm" do
-          %i.fa.fa-pencil-square-o.fa-lg
-      .left__bottom-content
-        = render partial: "left", collection: @groups, as: "group"
-
-    .right-contents
-      .right__top-content
-        %span
-          .group_name sampleグループ
-        %span
-          .members members: itisasmallworld
-        %a.button1{herf: ""} Edit
-      .right__center-content
-        .messages
-          %span
-            .messages__member itisasmallworld
-          %span
-            .messages__date 2017/03/02 06:27:07
-          %span
-            .messages__text なるほど
-      .right__bottom-content
-        .textarea{placeholder: "type a message"}
-          %i.fa.fa-picture-o.fa-lg
-        .button2{herf: ""} Send
+.left-contents
+  .left__top-content
+    %h1
+      = current_user.name
+    =link_to edit_user_registration_path, class: "btn btn-metis1 btn-sm" do
+      %i.fa.fa-cog.fa-lg
+    =link_to new_group_path, class: "btn btn-metis2 btn-sm" do
+      %i.fa.fa-pencil-square-o.fa-lg
+  .left__bottom-content
+    = render partial: "groups/group", collection: @groups, as: "group"
