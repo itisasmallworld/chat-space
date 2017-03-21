@@ -24,8 +24,7 @@ class GroupsController < ApplicationController
   end
 
   def update
-    @group.update(group_params)
-    if @group.save
+    if @group.update(group_params)
       redirect_to group_messages_path(@group), notice: :グループが更新されました
     else
       flash[:alert] = :グループが更新されませんでした
