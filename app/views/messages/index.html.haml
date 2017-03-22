@@ -11,13 +11,15 @@
     =link_to "Edit", edit_group_path(@group), class: "button1"
   .right__center-content
     .messages
-      %span
-        .messages__member itisasmallworld
-      %span
-        .messages__date 2017/03/02 06:27:07
-      %span
-        .messages__text なるほど
-  .right__bottom-content
-    .textarea{placeholder: "type a message"}
+      - @messages.each do |message|
+        %span
+          .messages__member= message.user.name
+        %span
+          .messages__date= message.created_at
+        %span
+          .messages__text= message.body
+  = form_for [@group, @message] do |f|
+    .right__bottom-content
+      = f.text_field :body, placeholder: "type a message", class: "textarea"
       %i.fa.fa-picture-o.fa-lg
-    .button2 Send
+      = f.submit "Send", class: "button2"
