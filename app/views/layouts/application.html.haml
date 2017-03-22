@@ -8,8 +8,8 @@
     = csrf_meta_tags
   %body
     - if flash[:notice]
-      %p.alert.alert-info = notice
+      %p.alert.alert-info= notice
     - if flash[:alert]
-      %p.alert.alert-error = alert
+      %p.alert.alert-error= alert
     .contents
       =yield
