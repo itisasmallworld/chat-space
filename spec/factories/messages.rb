@@ -1,10 +1,12 @@
 FactoryGirl.define do
 
   factory :message do
-    body         "プログラミング楽しい"
-    image        "sss"
-    user_id       1
-    group_id      1
+    body        {Faker::Lorem.word}
+    image       {Faker::File.file_name('path/to')}
+    user_id     {Faker::Number.digit}
+    group_id    {Faker::Number.digit}
+    created_at  {Faker::Time.between(2.days.ago, Time.now)}
   end
 
 end
+
