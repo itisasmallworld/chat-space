@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
 
-  before_action :set_group, :set_groups, :set_message, only:[:index, :create]
+  before_action :set_group, :set_groups, :set_messages, only:[:index, :create]
 
   def index
     @message = Message.new
@@ -30,7 +30,7 @@ class MessagesController < ApplicationController
     @groups = current_user.groups
   end
 
-  def set_message
+  def set_messages
     @messages = @group.messages
   end
 
