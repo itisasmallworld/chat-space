@@ -2,7 +2,7 @@ FactoryGirl.define do
 
   factory :user do
     email                 {Faker::Internet.email}
-    password               {Faker::Internet.password}
+    password              {Faker::Internet.password}
     name                  {Faker::Name.name}
     created_at            {Faker::Time.between(2.days.ago, Time.now)}
   end
