@@ -4,7 +4,6 @@ describe MessagesController do
 
   login_user
   let(:group) {create(:group)}
-  let(:invalid_attributes){ FactoryGirl.attributes_for(:message, body: nil) }
 
   describe 'GET #index' do
 
