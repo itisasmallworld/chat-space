@@ -34,17 +34,14 @@ describe MessagesController do
 
   end
 
-
   describe 'POST #create' do
-
     context 'Save successfully' do
-
       it "saves the new contact in the database" do
         expect { post :create, params: { group_id: group.id, message: attributes_for(:message) }
         }.to change(Message, :count).by(1)
       end
 
-      it 'create successful to render the :index template' do
+      it 'create successfully to render the :index template' do
         post :create, params: { group_id: group.id, message: attributes_for(:message) }
         expect(response).to redirect_to(group_id: group.id)
       end
@@ -53,18 +50,16 @@ describe MessagesController do
         post :create, params: { group_id: group.id, message: attributes_for(:message) }
         expect(flash[:notice]).to include('メッセージが投稿されました')
       end
-
     end
 
     context 'Failed to save' do
-
+      let(:invalid_attributes){ FactoryGirl.attributes_for(:message, body: nil) }
       it 'can not the new contact in the database' do
-        expect{
-          post :create, params: { group_id: group.id, message: invalid_attributes }
+        expect{post :create, params: { group_id: group.id, message: invalid_attributes }
           }.to change(Message, :count).by(0)
       end
 
-      it ' create unsuccessful to render the same template' do
+      it ' create unsuccessfully to render the same template' do
         post :create, params: { group_id: group.id, message: invalid_attributes }
         expect(response).to render_template :index, group_id: group.id
       end
@@ -73,8 +68,6 @@ describe MessagesController do
         post :create, params: { group_id: group.id, message: invalid_attributes }
         expect(flash[:alert]).to include('メッセージを入力してください')
       end
-
     end
-
   end
 end
