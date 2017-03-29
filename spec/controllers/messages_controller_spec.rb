@@ -53,18 +53,21 @@ describe MessagesController do
 
     context 'Failed to save' do
       let(:invalid_attributes){ FactoryGirl.attributes_for(:message, body: nil) }
+
+      before do
+        post :create, params: { group_id: group.id, message: invalid_attributes }
+      end
+
+
       it 'can not the new contact in the database' do
-        expect{post :create, params: { group_id: group.id, message: invalid_attributes }
-          }.to change(Message, :count).by(0)
+        expect{post :create, params: { group_id: group.id, message: invalid_attributes }}.to change(Message, :count).by(0)
       end
 
       it ' create unsuccessfully to render the same template' do
-        post :create, params: { group_id: group.id, message: invalid_attributes }
         expect(response).to render_template :index, group_id: group.id
       end
 
       it 'shows an alert message' do
-        post :create, params: { group_id: group.id, message: invalid_attributes }
         expect(flash[:alert]).to include('メッセージを入力してください')
       end
     end
