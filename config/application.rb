@@ -13,8 +13,11 @@ module ChatSpace
       g.helper false
       g.assets false
       g.test_framework false
+    end
 
     config.i18n.default_locale = :ja
-    end
+
+    config.paths.add "app/api", glob: "**/*.rb"
+    config.autoload_paths += %W(#{config.root}/app/api)
   end
 end
