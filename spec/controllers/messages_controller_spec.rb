@@ -58,7 +58,6 @@ describe MessagesController do
         post :create, params: { group_id: group.id, message: invalid_attributes }
       end
 
-
       it 'can not the new contact in the database' do
         expect{post :create, params: { group_id: group.id, message: invalid_attributes }}.to change(Message, :count).by(0)
       end

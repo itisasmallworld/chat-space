@@ -18,7 +18,7 @@
           .messages__date= message.created_at
         %span
           .messages__text= message.body
-  = form_for [@group, @message] do |f|
+  = form_for [@group, @message],html: {class: "js-form"} do |f|
     .right__bottom-content
       = f.text_field :body, placeholder: "type a message", class: "textarea"
       %i.fa.fa-picture-o.fa-lg
