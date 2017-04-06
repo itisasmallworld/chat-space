@@ -18,7 +18,6 @@ class GroupsController < ApplicationController
       flash[:alert] = '新規のグループが作成されませんでした'
       render "new"
     end
-
   end
 
   def edit
