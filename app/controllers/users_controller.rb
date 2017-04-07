@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-  def user_list_ajax
+  def search
     @users = []
-    @user = User.where("name like ?","%#{params[:name]}%")
+    @users = User.search_with_name(params[:name])
     respond_to do |format|
       format.json
     end

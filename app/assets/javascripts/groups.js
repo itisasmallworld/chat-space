@@ -21,7 +21,7 @@ $(function() {
         var input = $("#keyword").val();
         $.ajax ({
           type: 'GET',
-          url: '/users/user_list_ajax',
+          url: '/users/search',
           data: {
             name: input
           },
@@ -29,19 +29,18 @@ $(function() {
         })
 
         .done(function(data) {
-          if(input != preword) {
-            $('.list').remove();
-            if (input.length !== 0) {
-              data.forEach(function(data) {
-                var users_info = data.name;
-                addUserList(users_info);
-              });
-            }
+          $('.user_list').remove();
+          if (input.length !== 0) {
+            $.each(data, function(i, user) {
+              var user_info = user.name;
+              addUserList(user_info);
+            });
           }
         })
         .fail(function() {
           alert('error');
         });
+        preword = input;
     });
 
   $('#user-search-result').on('click', '.add-user', function() {
