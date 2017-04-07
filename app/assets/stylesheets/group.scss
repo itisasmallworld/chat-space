@@ -6,7 +6,8 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
-  height: 450px;
+  min-height: 450px;
+  overflow: scroll;
 
 
   h1 {
@@ -63,13 +64,41 @@
       float: right;
       width: 70%;
       margin-bottom: 40px;
+
+      .user_list {
+        list-style: none;
+        border-bottom: 1px solid black;
+        .add-user {
+          float: right;
+          cursor: pointer;
+          color: #38aef0;
+        }
+      }
+
+      .remove-input {
+        list-style: none;
+        // border-bottom: 1px solid black;
+
+        .member-list {
+        border-bottom: 1px solid black;
+        }
+
+        .master-user{
+          border-bottom: 1px solid black;
+        }
+        .remove-user {
+          float: right;
+          cursor: pointer;
+          color: #f05050;
+        }
+      }
     }
 
     .chat-group-form__label {
       display: block;
       line-height: 50px;
       font-weight: bold;
-      text-align: right;
+      text-align: left;
     }
 
     .chat-group-form__input {

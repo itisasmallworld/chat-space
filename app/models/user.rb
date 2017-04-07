@@ -9,4 +9,7 @@ class User < ApplicationRecord
   has_many :groups, through: :user_groups
   has_many :messages
   accepts_nested_attributes_for :groups
+
+  scope :search_with_name, -> (name){where("name like ?","%#{name}%")}
+
 end

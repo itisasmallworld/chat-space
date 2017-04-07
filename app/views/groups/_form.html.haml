@@ -6,12 +6,19 @@
       =f.text_field :group_name, placeholder: "グループ名を入力してください", class: "chat-group-form__input"
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      =f.label :user, "チャットメンバー", class: "chat-group-form__label"
+      =f.label :user, "チャットメンバーを追加", class: "chat-group-form__label"
     .chat-group-form__field--right
-      .chat-group-form__search.clearfix
-        .check_box
-          =f.collection_check_boxes(:user_ids, User.all, :id, :name)
-        #user-search-result
+      =text_field_tag :user,"", placeholder: "追加したいユーザー名を入力してください", class: "chat-group-form__input", id: 'keyword'
+      #user-search-result
+        %ul.clearfix
+          %li.user_list.clearfix
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+      .chat-group-form__field--right.clearfix
+        = f.label "チャットメンバー", class: "chat-group-form__label"
+        .remove-input
+          %ul.clearfix
+            %li.master-user #{current_user.name}
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
